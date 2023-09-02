@@ -19,13 +19,14 @@ const App = () => {
         <h1>To-Do List</h1>
         <input value={text} onChange={(e)=>setText(e.target.value)} />
         <button onClick={addTodo}>Add Todo</button>
-        <div>
+        <ul>
           {todos && todos.map((item,index)=>(
-            <ul key={index}>{item}
+            <li key={index}>
+              {item}
               <button onClick={()=>deleteTodo(index)}>Delete</button>
-            </ul>
+            </li>
           ))}
-        </div>
+        </ul>
     </div>
   )
 }
