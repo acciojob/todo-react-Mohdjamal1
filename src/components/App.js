@@ -8,7 +8,6 @@ const App = () => {
   function addTodo(){
     if(text.trim() !== ""){
       setTodos([...todos,text])
-      console.log(todos);
       setText("");
     }
   }
@@ -22,9 +21,9 @@ const App = () => {
         <button onClick={addTodo}>Add Todo</button>
         <div>
           {todos && todos.map((item,index)=>(
-            <div key={index}>{item}
+            <ul key={index}>{item}
               <button onClick={()=>deleteTodo(index)}>Delete</button>
-            </div>
+            </ul>
           ))}
         </div>
     </div>
